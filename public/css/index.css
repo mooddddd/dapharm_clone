@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  background: url(http://www.dapharm.com/images/common/bg/bg_top.gif) repeat-x;
+  /* font-family: "Noto Sans KR", "AppleGothic", sans-serif; */
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+#util {
+  /* position: relative; */
+  margin: 0 auto;
+  width: 960px;
+  height: 35px;
+  background: #555;
+}
+
+#util > #util_menu {
+  position: relative;
+  width: 960px;
+  height: 35px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  float: right;
+  padding-top: 7px;
+}
+
+#util_menu > .util {
+  position: absolute;
+  right: 81px;
+
+  /* padding: 0 70px; */
+  font-size: 13px;
+}
+
+#util_menu > .util > li {
+  /* width: 58px; */
+  background: url(http://www.dapharm.com/images/common/bg/bl_spuare.gif)
+    no-repeat 0 5px;
+  background-position: 1px;
+  float: left;
+  padding: 0 9px 0 10px;
+}
+
+#util_menu > .util > li:first-child {
+  background: none;
+}
+
+#util_menu > .util > li > a {
+  height: 12px;
+}
+
+#util_menu > .btn {
+  height: 25px;
+  overflow: hidden;
+  position: absolute;
+  right: 10px;
+  top: 4px;
+}
