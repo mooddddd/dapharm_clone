@@ -1,8 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  background: url(http://www.dapharm.com/images/common/bg/bg_top.gif) repeat-x;
-  /* font-family: "Noto Sans KR", "AppleGothic", sans-serif; */
+  color: #555;
+  font-family: "Noto Sans KR", "AppleGothic", sans-serif;
 }
 
 a {
@@ -14,12 +14,16 @@ li {
   list-style: none;
 }
 
+#util_wrap{
+  height: 35px;
+  background: url(http://www.dapharm.com/images/common/bg/bg_top.gif) repeat-x;
+}
+
 #util {
   /* position: relative; */
   margin: 0 auto;
-  width: 960px;
+  width: 961px;
   height: 35px;
-  background: #555;
 }
 
 #util > #util_menu {
@@ -63,4 +67,41 @@ li {
   position: absolute;
   right: 10px;
   top: 4px;
+}
+/* util 끝 */
+
+#wrap {
+  position: relative;
+  width: 100%;
+  background: url(http://www.dapharm.com/images/common/bg/bg_top02.jpg) repeat;
+}
+
+#header {
+  margin: 0 auto;
+  width: 961px;
+  padding : 30px
+}
+
+#header > .logo {
+  float: left;
+}
+
+#header > .gnb {
+  margin-left: 100px;
+  padding : 5px;
+  float: left;
+}
+
+#header > .gnb > li{
+  font-size: 15px;
+  font-weight: bold;
+  padding : 12px;
+  display: inline-block;
+}
+
+#header > button {
+  margin-top: 12px;
+  height: 29px; /*이미지 크기가 옮기니까 달라서 설정해줌*/
+  border: none;
+  float: right;
 }
