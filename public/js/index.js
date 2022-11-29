@@ -1,47 +1,29 @@
-// const gnbElement = document.querySelector(".gnb");
-// const gnbs = document.querySelectorAll(".gnb>li>.sub");
-// const header = document.querySelector("#header");
+// 마우스 오버를 할 때마다 해당 div에 on이 붙어야 함
+// div를 객체로 만들기? -> div[i] 선택될 때마다 on이 붙음
+// 그러면 div[i] 이외의 것들에는 전부 remove 먹여줘야 함
+// 해당 인덱스 객체 하나 만들고, 그 값이랑 맞으면 add on, 안맞으면 remove on?
 
-// for (let i = 0; i < gnbs.length; i++) {
-//   gnbs[i].addEventListener("mouseover", function () {
-//     gnbElement.classList.add("on");
-//   });
-// }
-
-// header.addEventListener("mouseout", function (e) {
-//   gnbElement.classList.remove("on");
-// });
+// 이게 돼?,,,,,,,,
 
 
-// a엘리먼트에 마우스오버 -> div class on추가
+const header = document.querySelector(".gnb")
 
-// const divElement = document.querySelector(".gnb>li>.on")
+const menu1 = document.querySelector(".menu1")
+const menu2 = document.querySelector(".menu2")
+const menu3 = document.querySelector(".menu3")
+const menu4 = document.querySelector(".menu4")
+const menu5 = document.querySelector(".menu5")
+const menu6 = document.querySelector(".menu6")
 
-// function handler(e){
-//     console.log("hello")
-// }
-
-// aElement.addEventListener("mouseover", handler)
-// on이 붙은 애들한테 핸들러 함수가 먹힘!
-
-// const divElement = document.querySelectorAll(".gnb>li>.sub");
-// const lis = document.querySelectorAll(".gnb>li");
-// const header = document.querySelector(".gnb>li>.sub")
+const div = document.querySelectorAll(".sub")
 
 
-// for (let i = 0; i < lis.length; i++) {
-//   lis[i].addEventListener("mouseover", function () {
-//     divElement[i].classList.add("on");
-//   });
-// }
 
 
-// function handler(e){
-//     console.log(e.target)
-// }
+menu1.addEventListener("mouseover",function(){
+  div[0].classList.add("on")
+})
+menu1.addEventListener("mouseout", function () {
+  div[0].classList.remove("on");
+});
 
-// handler()
-
-// header.addEventListener("mouseout", function (e) {
-//   divElement.classList.remove("on");
-// });
