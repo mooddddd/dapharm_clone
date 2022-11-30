@@ -5,25 +5,70 @@
 
 // 이게 돼?,,,,,,,,
 
+//mouseover 걸어줄 엘리먼트
+//
 
-const header = document.querySelector(".gnb")
-
-const menu1 = document.querySelector(".menu1")
-const menu2 = document.querySelector(".menu2")
-const menu3 = document.querySelector(".menu3")
-const menu4 = document.querySelector(".menu4")
-const menu5 = document.querySelector(".menu5")
-const menu6 = document.querySelector(".menu6")
-
-const div = document.querySelectorAll(".sub")
+// const gnbElement = document.querySelector(".gnb");
+// const gnbs = document.querySelectorAll(".gnb>li>.sub");
+const header = document.querySelector("#header");
 
 
+const lis = document.querySelectorAll(".gnb>li")
+const divElement = document.querySelectorAll(".gnb>li>.sub")
+
+for (let i = 0; i < lis.length; i++) {
+  lis[i].addEventListener("mouseover", function () {
+    divElement[i].classList.add("on");
+  });
+  header.addEventListener("mouseout", function (e) {
+    divElement[i].classList.remove("on");
+  });
+}
+// header 네비게이터
 
 
-menu1.addEventListener("mouseover",function(){
-  div[0].classList.add("on")
-})
-menu1.addEventListener("mouseout", function () {
-  div[0].classList.remove("on");
-});
+// // image 슬라이드
+// const ul = document.querySelector(".slider>ul");
+// const width = document.querySelector(".slider>ul>li").offsetWidth;
+// const totalWidth = width * 3;
+
+// ul.style.width = totalWidth + "px"; // 이미지 크기만큼 width 증가
+
+// let moveLeftAntimation = ul.animate(
+//   [
+//     { transform: "translateX(0px)" },
+//     { transform: "translateX(0px)", offset: 0.85 },
+//     { transform: "translateX(-100px)" },
+//   ],
+//   {
+//     duration: 2000,
+//   }
+// );
+
+// moveLeftAntimation.onfinish = function () {
+//   var removeItem = ul.removeChild(ul.firstElementChild);
+//   ul.appendChild(removeItem);
+//   moveLeftAntimation.play();
+// };
+
+const a = document.querySelector(".a")
+const b = document.querySelector(".b")
+const c = document.querySelector(".c")
+
+const arr = [a,b,c]
+const elements = document.querySelectorAll(".visual_rolling > li");
+
+let count = 1;
+const intervalId = setInterval(function () {
+  for (let i = 0; i < elements.length; i++) {
+    if (i === count) {
+      elements[i].classList.add("on");
+    } else {
+      elements[i].classList.remove("on");
+    }
+  }
+
+  if (++count === 3) count = 0;
+}, 5000);
+// main_visual - visual_rolling 부분!! 완성
 
