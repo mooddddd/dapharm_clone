@@ -11,19 +11,19 @@
 // const gnbElement = document.querySelector(".gnb");
 // const gnbs = document.querySelectorAll(".gnb>li>.sub");
 const header = document.querySelector("#header");
-
-
 const lis = document.querySelectorAll(".gnb>li")
 const divElement = document.querySelectorAll(".gnb>li>.sub")
 
 for (let i = 0; i < lis.length; i++) {
-  lis[i].addEventListener("mouseover", function () {
+  lis[i].addEventListener("mouseover", function (e) {
     divElement[i].classList.add("on");
   });
   header.addEventListener("mouseout", function (e) {
     divElement[i].classList.remove("on");
   });
+
 }
+
 // header 네비게이터
 
 
