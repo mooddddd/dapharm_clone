@@ -351,13 +351,14 @@ transition: all 2s;
   position: relative;
   width: 211px;
   height: 240px;
-  padding: 0 12px 0 12px;
+  padding: 0 12px;
   margin: 0 10px 10px 0;
   background: #fdfdfd;
+  overflow: hidden;
 }
 
 .content_left > .brand > h3{
-  padding: 9px 0 24px 0;
+  padding: 15px 0 20px 0;
   border-bottom: 1px solid #e5e5e5;
   color: #666;
 }
@@ -373,19 +374,31 @@ transition: all 2s;
   padding-left: 1px;
 }
 
-.content_left > .brand > .brand_rolling {
-  position: relative;
+/* .content_left > .brand > .brand_rolling {
+  position: absolute;
   overflow: hidden;
   width: 204px;
   height: 151px;
+} */
+.content_left > .brand > .brand_rolling {
+  position: absolute;
+  overflow: hidden;
+  margin-left: 21px;
+  height: 151px;
+}
+
+.content_left > .brand > .brand_rolling.animated {
+  transition: 1s ease-out;
 }
 
 .content_left > .brand > .brand_rolling > li {
-  position: absolute;
-  left: 0px;
-  top: 0px;
+  /* position: absolute; */
   width: 204px;
   float: left;
+}
+
+.content_left > .brand > .brand_rolling > li:not(:last-child) {
+padding-right: 10px;
 }
 
 .content_left > .notice {

@@ -50,11 +50,12 @@ const intervalId = setInterval(function () {
 
 
 // content_right new_rolling 부분 시작
+let index = 0;
+const margin = 10;
+
 const rolling = document.querySelector(".new_rolling");
 const img = document.querySelectorAll(".new_rolling>li");
-let index = 0;
 const imgcount = img.length;
-const margin = 10;
 const imgWidth = 441;
 const prev = document.querySelector(".prev_btn");
 const next = document.querySelector(".next_btn");
@@ -67,7 +68,7 @@ function makeClone() {
     cloneImg.classList.add("clone");
     rolling.appendChild(cloneImg);
   }
-  for (let i = imgcount - 1; i >= 0; i--) {
+  for (let i = imgcount - 1; i >= 0; i--) { //i값은 인덱스로 받으니까 -1 해야지!
     let cloneImg = img[i].cloneNode(true);
     cloneImg.classList.add("clone");
     rolling.prepend(cloneImg);
@@ -82,6 +83,7 @@ function makeClone() {
 
 function updatewidth() {
   let currentImgs = document.querySelectorAll(".new_rolling>li");
+  // 왜 다시 선언하느냐!? -> 클론으로 리스트가 늘어났으니까 다시 선언해줌! (맞나..)
   let newImgCount = currentImgs.length;
   let newWidth = (imgWidth + margin) * newImgCount - margin + "px";
   rolling.style.width = newWidth;
@@ -103,7 +105,7 @@ prev.addEventListener("click", function () {
 function moveImg(num) {
   rolling.style.left = -(num * (imgWidth + margin)) + "px";
   index = num;
-  if (index === imgcount) {
+  if (index === imgcount || -index=== imgcount) {
     setTimeout(function () {
       rolling.classList.remove("animated");
       rolling.style.left = "0px";
@@ -123,4 +125,82 @@ let interval = setInterval(() => {
 }, 5000); // 인터벌로 무한대로 돌게끔 해줌! 이거 다시 수정해서 멈춰야함...
 // content_right new_rolling 부분 완성!!!
 
-const aElement = document.querySelectorAll("a")
+
+
+// 똑같은 방법으로 content_left rolling 완성함!
+const rolling2 = document.querySelector(".brand_rolling");
+const img2 = document.querySelectorAll(".brand_rolling>li");
+
+let index2 = 0
+
+const imgcount2 = img2.length;
+const imgWidth2 = 204;
+
+const prev2 = document.querySelector(".prev_btn2");
+const next2 = document.querySelector(".next_btn2");
+
+makeClone2();
+
+function makeClone2() {
+  for (let i = 0; i < imgcount2; i++) {
+    let cloneImg2 = img2[i].cloneNode(true);
+    cloneImg2.classList.add("clone");
+    rolling2.appendChild(cloneImg2);
+  }
+  for (let i = imgcount2 - 1; i >= 0; i--) {
+    let cloneImg2 = img2[i].cloneNode(true);
+    cloneImg2.classList.add("clone");
+    rolling2.prepend(cloneImg2);
+  }
+
+  updatewidth2();
+  setInitialPos2();
+
+  setTimeout(function () {
+    rolling2.classList.add("animated");
+  }, 100);
+}
+
+function updatewidth2() {
+  let currentImgs2 = document.querySelectorAll(".brand_rolling>li");
+  let newImgCount2 = currentImgs2.length;
+  let newimgWidth2 = currentImgs2.length * (imgWidth2 + margin) - margin + "px";
+  rolling2.style.width = newimgWidth2;
+}
+
+function setInitialPos2() {
+  let initialTranslateValue2 = -(imgWidth2 + margin) * imgcount2;
+  rolling2.style.transform = "translateX(" + initialTranslateValue2 + "px)";
+}
+
+function moveImg2(num) {
+  rolling2.style.left = -(num * (imgWidth2 + margin)) + "px";
+  index2 = num;
+  if (index2 === imgcount2 || -index2 === imgcount2) {
+    setTimeout(function () {
+      rolling2.classList.remove("animated");
+      rolling2.style.left = "0px";
+      index2 = 0;
+    }, 1000);
+    setTimeout(function () {
+      rolling2.classList.add("animated");
+    }, 1100);
+  }
+}
+
+next2.addEventListener("click", function () {
+  moveImg2(index2 + 1);
+});
+
+prev2.addEventListener("click", function () {
+  moveImg2(index2 - 1);
+});
+
+let interva2 = setInterval(() => {
+  index2 += 1;
+  moveImg2(index2);
+  if (index2 === 3) index2 = 0;
+}, 5000);
+
+// content_left 같은 방법응로 완료!!!!!!!!!!!
+
