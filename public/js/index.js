@@ -27,30 +27,6 @@ for (let i = 0; i < lis.length; i++) {
 // header 네비게이터
 
 
-// // image 슬라이드
-// const ul = document.querySelector(".slider>ul");
-// const width = document.querySelector(".slider>ul>li").offsetWidth;
-// const totalWidth = width * 3;
-
-// ul.style.width = totalWidth + "px"; // 이미지 크기만큼 width 증가
-
-// let moveLeftAntimation = ul.animate(
-//   [
-//     { transform: "translateX(0px)" },
-//     { transform: "translateX(0px)", offset: 0.85 },
-//     { transform: "translateX(-100px)" },
-//   ],
-//   {
-//     duration: 2000,
-//   }
-// );
-
-// moveLeftAntimation.onfinish = function () {
-//   var removeItem = ul.removeChild(ul.firstElementChild);
-//   ul.appendChild(removeItem);
-//   moveLeftAntimation.play();
-// };
-
 const a = document.querySelector(".a")
 const b = document.querySelector(".b")
 const c = document.querySelector(".c")
@@ -72,3 +48,79 @@ const intervalId = setInterval(function () {
 }, 5000);
 // main_visual - visual_rolling 부분!! 완성
 
+
+// content_right new_rolling 부분 시작
+const rolling = document.querySelector(".new_rolling");
+const img = document.querySelectorAll(".new_rolling>li");
+let index = 0;
+const imgcount = img.length;
+const margin = 10;
+const imgWidth = 441;
+const prev = document.querySelector(".prev_btn");
+const next = document.querySelector(".next_btn");
+
+makeClone();
+
+function makeClone() {
+  for (let i = 0; i < imgcount; i++) {
+    let cloneImg = img[i].cloneNode(true);
+    cloneImg.classList.add("clone");
+    rolling.appendChild(cloneImg);
+  }
+  for (let i = imgcount - 1; i >= 0; i--) {
+    let cloneImg = img[i].cloneNode(true);
+    cloneImg.classList.add("clone");
+    rolling.prepend(cloneImg);
+  }
+  updatewidth();
+  setInitialPos();
+
+  setTimeout(function () {
+    rolling.classList.add("animated");
+  }, 100);
+}
+
+function updatewidth() {
+  let currentImgs = document.querySelectorAll(".new_rolling>li");
+  let newImgCount = currentImgs.length;
+  let newWidth = (imgWidth + margin) * newImgCount - margin + "px";
+  rolling.style.width = newWidth;
+}
+
+function setInitialPos() {
+  let initialTranslateValue = -(imgWidth + margin) * imgcount;
+  rolling.style.transform = "translateX(" + initialTranslateValue + "px)";
+}
+
+next.addEventListener("click", function () {
+  moveImg(index + 1);
+});
+
+prev.addEventListener("click", function () {
+  moveImg(index - 1);
+});
+
+function moveImg(num) {
+  rolling.style.left = -(num * (imgWidth + margin)) + "px";
+  index = num;
+  if (index === imgcount) {
+    setTimeout(function () {
+      rolling.classList.remove("animated");
+      rolling.style.left = "0px";
+      index = 0;
+    }, 1000);
+
+    setTimeout(function () {
+      rolling.classList.add("animated");
+    }, 1100);
+  }
+}
+
+let interval = setInterval(() => {
+  index += 1;
+  moveImg(index);
+  if (index === 3) index = 0;
+}, 5000); // 인터벌로 무한대로 돌게끔 해줌! 이거 다시 수정해서 멈춰야함...
+// content_right new_rolling 부분 완성!!!
+
+const aElement = document.querySelectorAll("a")

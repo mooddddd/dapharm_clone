@@ -9,6 +9,7 @@ a {
   text-decoration: none;
 }
 
+
 ul,
 li {
   list-style: none;
@@ -472,6 +473,7 @@ transition: all 2s;
   position: relative;
   float: right;
   width: 476px;
+  overflow: hidden;
 }
 
 .content_right > .search {
@@ -495,10 +497,13 @@ transition: all 2s;
 }
 
 .content_right > .new {
+  overflow: hidden;
   position: relative;
+  width: 441px;
   height: 213px;
-  padding: 10px 0 0 15px;
+  padding: 10px 0 0 0px;
   margin-bottom: 22px;
+  margin-left : 20px
 }
 
 .content_right > .new > h3 {
@@ -508,7 +513,7 @@ transition: all 2s;
 .content_right > .new > .btn {
   position: absolute;
   top: 20px;
-  right: 21px;
+  right: 0px;
 }
 
 
@@ -523,20 +528,42 @@ transition: all 2s;
   margin-top: 7px;
 } */
 
-.content_right > .new > .new_rolling{
+/* .content_right > .new > .new_rolling{
   position: relative;
   overflow: hidden;
   width: 441px;
   height: 172px;
+} */
+.content_right > .new > .new_rolling {
+  position: absolute;
+  overflow: hidden;
+  height: 172px;
+  top: 50px;
+  left : 0
 }
 
-.content_right > .new > .new_rolling > li {
+.content_right > .new > .new_rolling.animated {
+  transition: 1s ease-out;
+}
+
+/* .content_right > .new > .new_rolling > li {
   overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   width: 441px;
   float: left;
+} */
+.content_right > .new > .new_rolling > li {
+  height: 172px;
+  width: 441px;
+  /* left: 20px; */
+  float: left;
+  overflow: hidden;
+}
+
+.content_right > .new > .new_rolling > li:not(:last-child) {
+  margin-right: 10px;
 }
 
 
