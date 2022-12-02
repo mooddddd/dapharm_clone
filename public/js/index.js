@@ -205,3 +205,23 @@ let interval2 = setInterval(() => {
 
 // content_left 같은 방법응로 완료!!!!!!!!!!!
 
+
+// popup 띄우기, 닫기 시작
+const popup = document.querySelector("#popup")
+const popupBtn = document.querySelector(".mediaBtn")
+const closeBtn1 = document.querySelector("#top > .close")
+const closeBtn2 = document.querySelector("#popup>a")
+
+popupBtn.addEventListener("click", function(){
+  popup.className="on"
+})
+
+closeBtn1.addEventListener("click", function(){
+  popup.className=""
+})
+
+closeBtn2.addEventListener("click", function(){
+  popup.className=""
+})
+
+// popup 띄우기, 닫기 성공!!!
