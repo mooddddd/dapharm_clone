@@ -132,6 +132,7 @@ const rolling2 = document.querySelector(".brand_rolling");
 const img2 = document.querySelectorAll(".brand_rolling>li");
 
 let index2 = 0
+let margin2 = 15
 
 const imgcount2 = img2.length;
 const imgWidth2 = 204;
@@ -164,17 +165,25 @@ function makeClone2() {
 function updatewidth2() {
   let currentImgs2 = document.querySelectorAll(".brand_rolling>li");
   let newImgCount2 = currentImgs2.length;
-  let newimgWidth2 = currentImgs2.length * (imgWidth2 + margin) - margin + "px";
+  let newimgWidth2 = currentImgs2.length * (imgWidth2 + margin2) - margin2 + "px";
   rolling2.style.width = newimgWidth2;
 }
 
 function setInitialPos2() {
-  let initialTranslateValue2 = -(imgWidth2 + margin) * imgcount2;
+  let initialTranslateValue2 = -(imgWidth2 + margin2) * imgcount2;
   rolling2.style.transform = "translateX(" + initialTranslateValue2 + "px)";
 }
 
+next2.addEventListener("click", function () {
+  moveImg2(index2 + 1);
+});
+
+prev2.addEventListener("click", function () {
+  moveImg2(index2 - 1);
+});
+
 function moveImg2(num) {
-  rolling2.style.left = -(num * (imgWidth2 + margin)) + "px";
+  rolling2.style.left = -(num * (imgWidth2 + margin2)) + "px";
   index2 = num;
   if (index2 === imgcount2 || -index2 === imgcount2) {
     setTimeout(function () {
@@ -188,15 +197,7 @@ function moveImg2(num) {
   }
 }
 
-next2.addEventListener("click", function () {
-  moveImg2(index2 + 1);
-});
-
-prev2.addEventListener("click", function () {
-  moveImg2(index2 - 1);
-});
-
-let interva2 = setInterval(() => {
+let interval2 = setInterval(() => {
   index2 += 1;
   moveImg2(index2);
   if (index2 === 3) index2 = 0;
