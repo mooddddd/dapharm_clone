@@ -755,15 +755,41 @@ padding-top: 30px;
 }
 
 #footer_top{
-  height: 43px;
+  height: 33px;
   border-bottom: 1px solid #e7e7e7;
   border-top: 3px solid #029ec3;
+  padding-top: 10px;
 }
 
-#fotter_top > #menu_left > li {
+#footer_top > #menu_left > li {
+  float: left;
+  padding-right: 10px;
+}
+
+#footer_top > #menu_right > li {
+  padding-left: 20px;
+  float: right;
+}
+
+#footer_bot{
+  padding-top: 20px;
+}
+
+#footer_bot > .f_logo {
+  padding-top: 5px;
+  padding-right : 20px;
   float: left;
 }
 
-#fotter_top > #menu_right > li {
+#footer_bot > .f_add{
+  float: left;
+}
+
+#footer_bot > .mark {
   float: right;
+  padding-right: 10px;
+}
+
+#footer_bot > .mark > img {
+  vertical-align: top
 }
