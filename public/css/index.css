@@ -71,6 +71,91 @@ li {
 }
 /* util 끝 */
 
+/* 팝업css */
+#popup_wrap{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#popup {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 500px;
+  margin: 0 auto;
+  background: #f6f6f6;;
+  border: 1px solid #000;
+}
+
+#popup.on{
+  display: block;
+}
+
+#popup > h1 {
+  height: 34px;
+  background: #5b5a5e;
+  border-bottom: #019ac0 solid 4px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+}
+
+#popup > a {
+  position: absolute;
+  top : 15px;
+  right : 30px
+}
+
+#popup > #top {
+  margin-top: 20px;
+  padding: 0 30px 0 30px;
+}
+
+#popup > #top > h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#popup > #top > h3 > .title {
+  float: left;
+  font-size: 16px;
+}
+
+#popup > #top > h3 > .date {
+  position: absolute;
+  background: url("http://www.dapharm.com/images/common/ico/ico_data.gif") no-repeat;
+  font-size: 12px;
+  padding-left: 15px;
+  font-weight: normal;
+  right : 30px
+}
+
+
+#popup > #top > .cf {
+}
+
+#popup > #top > .cf > iframe {
+  margin: 10px auto;
+}
+
+#popup > #top > .textbox {
+  margin: 20px 0;
+  padding: 20px;
+  overflow-y: scroll;
+  background: #fff;
+  height: 51px;
+}
+
+#popup > #top > .close {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+/* popup css 끝 */
+
+
+
 #wrap {
   position: relative;
   width: 100%;
@@ -331,12 +416,12 @@ transition: all 2s;
   width: 961px;
   margin: 0 auto;
   margin-top: 10px;
-  /* border-bottom: 1px solid #c7c7c8; */
+  border-bottom: 1px solid #c7c7c8;
 }
 
 #contents{
   min-height: 715px;
-  /* background: url(http://www.dapharm.com/images//main/bg_bottom.png) no-repeat 0 bottom; */
+  background: url(http://www.dapharm.com/images//main/bg_bottom.png) no-repeat 0 bottom;
 }
 
 /*content_left 시작*/
@@ -637,84 +722,48 @@ padding-right: 15px;
 /* .content_right > .news_promo > .promo > .media {
 } */
 
-/* 팝업css */
-#popup_wrap{
-  position: relative;
-  width: 100%;
-  height: 100%;
+
+.content_right > .steps > a > img{
+padding-top: 30px;
 }
-#popup {
-  display: none;
+
+.content_right > .cyber {
+  background: url("http://www.dapharm.com/images/main/bg_cyber.gif") no-repeat bottom;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 500px;
+  right: 4px;
+  bottom: 3px;
+  width: 240px;
+  height: 133px;
+}
+
+.content_right > .cyber > img {
+  position: absolute;
+  right: 20px;
+  top : 10px
+}
+
+.content_right > .cyber > a{
+  position: absolute;
+  right: 20px;
+  top : 50px
+}
+
+#footer {
   margin: 0 auto;
-  background: #f6f6f6;;
-  border: 1px solid #000;
+  width: 961px;
+  height: 152px;
 }
 
-#popup.on{
-  display: block;
+#footer_top{
+  height: 43px;
+  border-bottom: 1px solid #e7e7e7;
+  border-top: 3px solid #029ec3;
 }
 
-#popup > h1 {
-  height: 34px;
-  background: #5b5a5e;
-  border-bottom: #019ac0 solid 4px;
-  padding-bottom: 15px;
-  padding-left: 20px;
-}
-
-#popup > a {
-  position: absolute;
-  top : 15px;
-  right : 30px
-}
-
-#popup > #top {
-  margin-top: 20px;
-  padding: 0 30px 0 30px;
-}
-
-#popup > #top > h3 {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-#popup > #top > h3 > .title {
+#fotter_top > #menu_left > li {
   float: left;
-  font-size: 16px;
 }
 
-#popup > #top > h3 > .date {
-  position: absolute;
-  background: url("http://www.dapharm.com/images/common/ico/ico_data.gif") no-repeat;
-  font-size: 12px;
-  padding-left: 15px;
-  font-weight: normal;
-  right : 30px
-}
-
-
-#popup > #top > .cf {
-}
-
-#popup > #top > .cf > iframe {
-  margin: 10px auto;
-}
-
-#popup > #top > .textbox {
-  margin: 20px 0;
-  padding: 20px;
-  overflow-y: scroll;
-  background: #fff;
-  height: 51px;
-}
-
-#popup > #top > .close {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+#fotter_top > #menu_right > li {
+  float: right;
 }
