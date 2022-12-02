@@ -152,12 +152,12 @@ function makeClone2() {
 function updatewidth2() {
   let currentImgs2 = document.querySelectorAll(".brand_rolling>li");
   let newImgCount2 = currentImgs2.length;
-  let newimgWidth2 = currentImgs2.length * (imgWidth2 + margin2) - margin2 + "px";
+  let newimgWidth2 = newImgCount2 * (imgWidth2 + margin2) - margin2 + "px";
   rolling2.style.width = newimgWidth2;
 }
 
 function setInitialPos2() {
-  let initialTranslateValue2 = -(imgWidth2 + margin2) * imgcount2;
+  let initialTranslateValue2 = -(imgWidth2 + margin2) * imgcount2 ;
   rolling2.style.transform = "translateX(" + initialTranslateValue2 + "px)";
 }
 
@@ -196,10 +196,15 @@ let interval2 = setInterval(() => {
 // popup 띄우기, 닫기 시작
 const popup = document.querySelector("#popup")
 const popupBtn = document.querySelector(".mediaBtn")
+const popupBtn2 = document.querySelector(".mediaBtn2")
 const closeBtn1 = document.querySelector("#top > .close")
 const closeBtn2 = document.querySelector("#popup>a")
 
 popupBtn.addEventListener("click", function(){
+  popup.className="on"
+})
+
+popupBtn2.addEventListener("click", function(){
   popup.className="on"
 })
 
@@ -212,3 +217,10 @@ closeBtn2.addEventListener("click", function(){
 })
 
 // popup 띄우기, 닫기 성공!!!
+
+// const familySite = document.querySelector("#family")
+// const familyBtn = document.querySelector("#menu_right>li>a")
+
+// familyBtn.addEventListener("click", function(){
+//   familySite.className="on"
+// })

@@ -34,7 +34,7 @@ li {
   box-sizing: border-box;
   margin: 0 auto;
   float: right;
-  padding-top: 7px;
+  padding-top: 10px;
 }
 
 #util_menu > .util {
@@ -46,10 +46,8 @@ li {
 }
 
 #util_menu > .util > li {
-  /* width: 58px; */
   background: url(http://www.dapharm.com/images/common/bg/bl_spuare.gif)
     no-repeat 0 5px;
-  background-position: 1px;
   float: left;
   padding: 0 9px 0 10px;
 }
@@ -60,6 +58,10 @@ li {
 
 #util_menu > .util > li > a {
   height: 12px;
+}
+
+#util_menu > .util > li > a > img {
+  vertical-align: top
 }
 
 #util_menu > .btn {
@@ -707,6 +709,10 @@ padding-right: 15px;
   padding-bottom: 5px;
 }
 
+.content_right > .news_promo > .news > ul > li >a:hover{
+  font-weight: bold;
+}
+
 
 .content_right > .news_promo > .promo {
   position: absolute;
@@ -719,8 +725,9 @@ padding-right: 15px;
   padding-top: 15px;
 }
 
-/* .content_right > .news_promo > .promo > .media {
-} */
+.content_right > .news_promo > .promo > .media > p > a:hover {
+  font-weight: bold;
+}
 
 
 .content_right > .steps > a > img{
@@ -793,3 +800,32 @@ padding-top: 30px;
 #footer_bot > .mark > img {
   vertical-align: top
 }
+
+/* #family{
+  display: none;
+  position: absolute;
+  background: #555;
+  left: 0;
+  width: 100%;
+  
+}
+
+#family.on {
+  display: block;
+}
+
+#family_wrap {
+  width: 961px;
+  margin: auto;
+}
+
+#family_wrap > ul > li {
+  float: left;
+  width: 152px;
+  height: 98px;
+  padding: 15px 20px 20px 20px;
+}
+
+#family_wrap > ul > li > ul > li >a {
+  color: #c7c7c8;
+} */
