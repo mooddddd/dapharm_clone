@@ -217,3 +217,10 @@ closeBtn2.addEventListener("click", function(){
 })
 
 // popup 띄우기, 닫기 성공!!!
+
+// const familySite = document.querySelector("#family")
+// const familyBtn = document.querySelector("#menu_right>li>a")
+
+// familyBtn.addEventListener("click", function(){
+//   familySite.className="on"
+// })
