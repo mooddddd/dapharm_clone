@@ -644,6 +644,7 @@ padding-right: 15px;
   height: 100%;
 }
 #popup {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -652,6 +653,10 @@ padding-right: 15px;
   margin: 0 auto;
   background: #f6f6f6;;
   border: 1px solid #000;
+}
+
+#popup.on{
+  display: block;
 }
 
 #popup > h1 {
